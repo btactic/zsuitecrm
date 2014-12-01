@@ -1,3 +1,19 @@
+# bSugar
+
+Branches explanation
+
+* master: Outdated. This explanation. Please use the branch that meets your needs.
+
+* bsugar_apply: Tools for generating bsugar.
+* zsugar_bsugar: bSugar branch of zsugar. Ideal for making pull requests to upstream.
+* bsugar: bSugar source code. This is the source code for bTactic's fork of zsugar zimlet. This is a public release.
+
+* bsucre_apply: Tools for generating bsucre (Internal use. Do not ask support for it).
+* zsugar_bsucre: bsucre branch of zsugar. Ideal for making pull requests to upstream (Internal use. Do not ask support for it).
+* bsucre: bSucre source code. This is the source code for bTactic's fork of zsugar zimlet (Internal use. Do not ask support for it).
+
+* irontec: This is upstream (irontec)'s master branch. We will update it as frequently as we can but do not expect it to be updated.
+
 # zsugar
 
 zSugar is a zimlet for Zimbra Collaboration Suite.
