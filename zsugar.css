@@ -87,6 +87,13 @@
 	height:40px;
 }
 
+#zsugar_blogo {
+	background: url("resources/btactic.png") no-repeat 10px  center;
+	padding-left:60px;
+	padding-right:15px;
+	height:40px;
+}
+
 #zsugar_powered {
 	float : right;
 }
