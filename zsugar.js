@@ -40,6 +40,21 @@ com_irontec_zsugarH.prototype.singleClicked = function() {
 };
 
 /***
+ * com_irontec_zsugarH.prototype.getName
+ * 
+ * This function works as wrapper for getting
+ * the zimlet name
+ * 
+ * E.g. Out of: com_irontec_zsugar : zsugar
+ * 
+ */
+com_irontec_zsugarH.prototype.getName = function() {
+  var tmp_complete_name = this.getZimletContext().name;
+  return tmp_complete_name.split("_")[2];
+  
+};
+
+/***
  * com_irontec_zsugarH.prototype.menuItemSelected
  * 
  * This function works as wrapper for the Selected item in the Context
@@ -316,11 +331,11 @@ com_irontec_zsugarH.prototype._checkCredentials = function(responsetxt) {
     if (this.iscrm.sessid !== false) {
         appCtxt.getAppController().setStatusMsg(
             this.getMessage("zsugar_loggedin") + "<br /><small>" +
-            this.getMessage("zsugar_name") + " " + this.getZimletContext().version + "</small>");
+            this.getName() + " " + this.getZimletContext().version + "</small>");
     } else {
         appCtxt.getAppController().setStatusMsg(
             this.getMessage("zsugar_notValidAuth") + "<br /><small>" +
-            this.getMessage("zsugar_name") + " " + this.getZimletContext().version + "<br />" +
+            this.getName() + " " + this.getZimletContext().version + "<br />" +
             responsetxt.substr(0, 30) + "</small>");
     }
 }
@@ -347,7 +362,7 @@ com_irontec_zsugarH.prototype._checkAtt = function() {
  */
 com_irontec_zsugarH.prototype._execIfLogged = function(callback) {
     if (this.iscrm.sessid == false) {
-        appCtxt.getAppController().setStatusMsg(this.getMessage("zsugar_notValidAuth")+"<br /><small>"+this.getMessage("zsugar_name")+" "+this.getZimletContext().version+"</small>");
+        appCtxt.getAppController().setStatusMsg(this.getMessage("zsugar_notValidAuth")+"<br /><small>"+this.getName()+" "+this.getZimletContext().version+"</small>");
     } else {
             if (callback !== undefined )
                 callback.run();
@@ -461,7 +476,7 @@ com_irontec_zsugarH.prototype._displayMSGDialog = function(msg) {
     if (this.iscrm.sessid == false) {
         return appCtxt.getAppController().setStatusMsg(
                 this.getMessage("zsugar_notValidAuth") + "<br /><small>" +
-                this.getMessage("zsugar_name") + " " + this.getZimletContext().version + "</small>");
+                this.getName() + " " + this.getZimletContext().version + "</small>");
     }
 
 	// Set Message object
