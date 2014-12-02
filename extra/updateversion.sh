@@ -18,7 +18,7 @@ EOF
 }
 
 
-FILES_TO_REPLACE="com_irontec_zsugar.xml com_irontec_zsugar.properties com_irontec_zsugar_*.properties doc/README doc/INSTALL doc/LICENSE"
+FILES_TO_REPLACE="com_irontec_zsugar.xml doc/README doc/INSTALL doc/LICENSE"
 
 if (( $# != 2 )); then
     echo -e -n "Expecting two parametres\n"
