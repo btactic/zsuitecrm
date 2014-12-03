@@ -3,12 +3,25 @@
 set -x
 set -v
 
+NEW_ZIMLET_PREFIX="bsugar-"
+
+
+# $1: To find
+
+find_and_replace_with_prefix () {
+  local find_string="$1"
+
+  find_and_replace "${find_string}" "${NEW_ZIMLET_PREFIX}${find_string}"
+
+}
+
+
 # $1: To find
 # $2: To replace
 
 find_and_replace () {
-  find_string="$1"
-  find_replace="$2"
+  local find_string="$1"
+  local find_replace="$2"
 
   find . -type f -not -name $(basename ${0}) -a -not -iwholename '*.git*'  -print0 | xargs -0 sed -i 's/'"${find_string}"'/'"${find_replace}"'/g'
 
@@ -26,29 +39,29 @@ done
 
 # Find and replace design
 
-find_and_replace "zsugar_container" "bsugar-zsugar_container"
-find_and_replace "zsugar_container" "bsugar-zsugar_container"
-find_and_replace "zsugar_atts" "bsugar-zsugar_atts"
-find_and_replace "zsugar_container" "bsugar-zsugar_container"
-find_and_replace "zsugar_powered_logo" "bsugar-zsugar_powered_logo"
-find_and_replace "zsugar_contactIden" "bsugar-zsugar_contactIden"
-find_and_replace "zsugar_atts" "bsugar-zsugar_atts"
-find_and_replace "zsugar_atts" "bsugar-zsugar_atts"
-find_and_replace "zsugar_logo" "bsugar-zsugar_logo"
-find_and_replace "zsuguar_ilogo" "bsugar-zsuguar_ilogo"
-find_and_replace "zsugar_blogo" "bsugar-zsugar_blogo"
-find_and_replace "zsugar_powered" "bsugar-zsugar_powered"
+find_and_replace_with_prefix "zsugar_container"
+find_and_replace_with_prefix "zsugar_container"
+find_and_replace_with_prefix "zsugar_atts"
+find_and_replace_with_prefix "zsugar_container"
+find_and_replace_with_prefix "zsugar_powered_logo"
+find_and_replace_with_prefix "zsugar_contactIden"
+find_and_replace_with_prefix "zsugar_atts"
+find_and_replace_with_prefix "zsugar_atts"
+find_and_replace_with_prefix "zsugar_logo"
+find_and_replace_with_prefix "zsuguar_ilogo"
+find_and_replace_with_prefix "zsugar_blogo"
+find_and_replace_with_prefix "zsugar_powered"
 
-find_and_replace "ISUGAR-panelIcon" "bsugar-ISUGAR-panelIcon"
-find_and_replace "ISUGAR-icon-right" "bsugar-ISUGAR-icon-right"
-find_and_replace "ISUGAR-lead" "bsugar-ISUGAR-lead"
-find_and_replace "center" "bsugar-center"
-find_and_replace "big" "bsugar-big"
-find_and_replace "med" "bsugar-med"
-find_and_replace "marTop" "bsugar-marTop"
-find_and_replace "MoreButtons" "bsugar-MoreButtons"
+find_and_replace_with_prefix "ISUGAR-panelIcon"
+find_and_replace_with_prefix "ISUGAR-icon-right"
+find_and_replace_with_prefix "ISUGAR-lead"
+find_and_replace_with_prefix "center"
+find_and_replace_with_prefix "big"
+find_and_replace_with_prefix "med"
+find_and_replace_with_prefix "marTop"
+find_and_replace_with_prefix "MoreButtons"
 
 
-find_and_replace "zsugar.css" "bsugar-zsugar.css"
+find_and_replace_with_prefix "zsugar.css"
 mv zsugar.css bsugar-zsugar.css
 
