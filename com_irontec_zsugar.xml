@@ -19,6 +19,7 @@
 	<resource>resources/logoej.gif</resource>
 	<resource>resources/irontec.png</resource>
 	<resource>resources/Poweredby.png</resource>
+	<resource>resources/btactic.png</resource>
 
 	<zimletPanelItem label="bSugar" icon="ISUGAR-panelIcon">
 		<toolTipText>${msg.zsugar_tooltip}</toolTipText>
