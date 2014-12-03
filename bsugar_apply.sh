@@ -40,13 +40,8 @@ done
 # Find and replace design
 
 find_and_replace_with_prefix "zsugar_container"
-find_and_replace_with_prefix "zsugar_container"
 find_and_replace_with_prefix "zsugar_atts"
-find_and_replace_with_prefix "zsugar_container"
-find_and_replace_with_prefix "zsugar_powered_logo"
 find_and_replace_with_prefix "zsugar_contactIden"
-find_and_replace_with_prefix "zsugar_atts"
-find_and_replace_with_prefix "zsugar_atts"
 find_and_replace_with_prefix "zsugar_logo"
 find_and_replace_with_prefix "zsuguar_ilogo"
 find_and_replace_with_prefix "zsugar_blogo"
