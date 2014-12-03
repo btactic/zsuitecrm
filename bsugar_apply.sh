@@ -16,4 +16,11 @@ find_and_replace () {
 
 find_and_replace "com_irontec_zsugarH" "com_btactic_bsugarH"
 
+for nfile in com_irontec_zsugar* ; do
+
+  btactic_file=$(echo $nfile | sed 's/com_irontec_zsugar/com_btactic_bsugar/g')
+  mv "${nfile}" "${btactic_file}"
+
+done
+
 
