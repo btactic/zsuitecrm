@@ -1,10 +1,10 @@
-# zsugar
+# bsugar
 
-zSugar is a zimlet for Zimbra Collaboration Suite.
+bSugar is a zimlet for Zimbra Collaboration Suite.
 
 This project aims for integration of received mails between Zimbra and SugarCRM.
 
-zSugar allows to add a mail and their attachments into:
+bSugar allows to add a mail and their attachments into:
  - Accounts
  - Contacts
  - Opportunities
@@ -15,26 +15,26 @@ zSugar allows to add a mail and their attachments into:
 You can also create new Leads before exporting an email.
 
 ## Compatibility
-zSugar has been tested in ZCS 6.x, 7.x and 8.x  and SugarCRM v5.5.x and 
+bSugar has been tested in ZCS 6.x, 7.x and 8.x  and SugarCRM v5.5.x and 
 above (At least until 6.1.x). It may or may not work properly 
 with other versions.
 
-## Installing zSugar
- - Create a folder named com_irontec_zsugar
- - Download zSugar source and uncompress into previously created folder
- - Zip the folder com_irontec_zsugar and deploy using Zimbra Administration interface
+## Installing bSugar
+ - Create a folder named com_irontec_bsugar
+ - Download bSugar source and uncompress into previously created folder
+ - Zip the folder com_btactic_bsugar and deploy using Zimbra Administration interface
  
 You can also deploy the zimlet from the server shell 
 
     $$ su - zimbra
-    $ zmzimletctl deploy com_irontec_zsugar.zip
+    $ zmzimletctl deploy com_btactic_bsugar.zip
     $ zmmailboxdctl restart
   
-## Configuring zSugar
- There is no global configuration for zSugar, each user must 
+## Configuring bSugar
+ There is no global configuration for bSugar, each user must 
  configure it separately.
 
- If zSugar has been correctly deployed, after loggin in zimbra, 
+ If bSugar has been correctly deployed, after loggin in zimbra, 
  a new icon should apperar in the left panel. Just click it and 
  a configuration window should appear with the following fields:
 
@@ -55,15 +55,15 @@ You can also deploy the zimlet from the server shell
 	it is "activated", so previously exported emails won't 
 	be tagged.
  
- After configuring zSugar, you can validate your connection to
- SugarCRM by right-clicking the zSugar icon and choosing Force
+ After configuring bSugar, you can validate your connection to
+ SugarCRM by right-clicking the bSugar icon and choosing Force
  Authentication.
  
-## Using zSugar
- There are three ways to access zSugar screen:
+## Using bSugar
+ There are three ways to access bSugar screen:
 
  - Using the Zimlet panel: 
-   Just Drag a conversation or email and drop in the zSugar icon.
+   Just Drag a conversation or email and drop in the bSugar icon.
 
  - Using Toolbar Button:
    Select a conversation or email and click 'Send to SugarCRM'
@@ -76,9 +76,9 @@ You can also deploy the zimlet from the server shell
  After this, a new screen will appear with following sections:
  - Result Section:
     This section shows SugarCRM response results. By default, 
-    zSugar will search the FROM: contact of the email. It will show
+    bSugar will search the FROM: contact of the email. It will show
     Accounts, Opportunities and Projects as configured (see 5.- 
-    Configuring zSugar)
+    Configuring bSugar)
 
  - Contacts Dropbox
     We can request CRM information of other contact in the selected
@@ -90,7 +90,10 @@ You can also deploy the zimlet from the server shell
 
 ## Authors
 
- This zimlet has been developed by Irontec S.L.
+ This zimlet has been improved by BTACTIC, SCCL
+    http://www.btactic.com
+
+ This zimlet has been originally developed by Irontec S.L.
     http://www.irontec.com
 
  Base64 Library has been developed by Christian d'Heureuse.
@@ -101,6 +104,7 @@ This is a extremelly experimental plugin.
 Use it at your own risk.
 
 Stay tunned for new and improved versions.
+(c) BTACTIC, SCCL 2014
 (c) Irontec S.L. 2010
 Released under GPL v3.0
 

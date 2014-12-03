@@ -1,4 +1,4 @@
-zSugar 1.4.14
+bSugar 1.4.14
 SugarCRM integration into Zimbra
 
 ================================
@@ -15,7 +15,7 @@ SugarCRM integration into Zimbra
  $$ su - zimbra
 
 - Install the zimlet with the following command :
- $ zmzimletctl deploy com_irontec_zsugar.zip
+ $ zmzimletctl deploy com_btactic_bsugar.zip
 
 - Then, restart jetty (interruption of access to the webmail) with this command: 
  $ zmmailboxdctl restart

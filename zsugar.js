@@ -1,5 +1,6 @@
 /****************************************************************************
  **
+ ** Copyright (C) 2014 BTACTIC, SCCL All rights reserved.
  ** Copyright (C) 2011 Irontec SL. All rights reserved.
  **
  ** This file may be used under the terms of the GNU General Public
