@@ -58,5 +58,5 @@ find_and_replace_with_prefix "MoreButtons"
 
 
 find_and_replace_with_prefix "zsugar.css"
-mv zsugar.css bsugar-zsugar.css
+mv "zsugar.css" "${NEW_ZIMLET_PREFIX}zsugar.css"
 
