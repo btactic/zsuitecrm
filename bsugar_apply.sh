@@ -50,11 +50,6 @@ find_and_replace_with_prefix "zsugar_powered"
 find_and_replace_with_prefix "ISUGAR-panelIcon"
 find_and_replace_with_prefix "ISUGAR-icon-right"
 find_and_replace_with_prefix "ISUGAR-lead"
-find_and_replace_with_prefix "center"
-find_and_replace_with_prefix "big"
-find_and_replace_with_prefix "med"
-find_and_replace_with_prefix "marTop"
-find_and_replace_with_prefix "MoreButtons"
 
 
 find_and_replace_with_prefix "zsugar.css"
