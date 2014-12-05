@@ -1,7 +1,8 @@
 #!/bin/bash
 
+source ./custom_zimlet_config.sh
 
-NEW_ZIMLET_PREFIX="bsugar-"
+NEW_ZIMLET_PREFIX="${ZIMLET_SUBSTRING}-"
 
 
 # $1: To find
@@ -25,11 +26,11 @@ find_and_replace () {
 
 }
 
-find_and_replace "com_irontec_zsugarH" "com_btactic_bsugarH"
+find_and_replace "${ORIGINAL_ZIMLET_STRING}H" "${ZIMLET_STRING}H"
 
-for nfile in com_irontec_zsugar* ; do
+for nfile in ${ORIGINAL_ZIMLET_STRING}* ; do
 
-  btactic_file=$(echo $nfile | sed 's/com_irontec_zsugar/com_btactic_bsugar/g')
+  btactic_file=$(echo $nfile | sed 's/'"${ORIGINAL_ZIMLET_STRING}"'/'"${ZIMLET_STRING}"'/g')
   mv "${nfile}" "${btactic_file}"
 
 done
