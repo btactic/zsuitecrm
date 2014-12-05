@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -x
-set -v
 
 NEW_ZIMLET_PREFIX="bsugar-"
 
