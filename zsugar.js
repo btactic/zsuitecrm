@@ -1491,9 +1491,13 @@ com_irontec_zsugarH.prototype._newOpportunityDialog = function() {
         document.getElementById("zsugar_Opportunity_amount").appendChild(this.inOpportunityAmount.getHtmlElement());
         this.inOpportunityDate = new DwtInputField({parent: this.pNewOpportunityView, size: 30});
         document.getElementById("zsugar_Opportunity_date").appendChild(this.inOpportunityDate.getHtmlElement());
-        this.inOpportunityStage = new DwtHtmlEditor({parent: this.pNewOpportunityView});
-        this.inOpportunityStage.setSize(300, 70);
-        document.getElementById("zsugar_Opportunity_stage").appendChild(this.inOpportunityStage.getHtmlElement());
+        if (typeof DwtHtmlEditor === "function")
+            this.inOpportunityStage = new ZmHtmlEditor(this.pNewOpportunityView);
+        else
+            this.inOpportunityStage = new ZmHtmlEditor({parent: this.pNewOpportunityView});
+        this.inOpportunityStage.setMode("text/plain");
+		this.inOpportunityStage.setSize(300, 70);
+		document.getElementById("zsugar_Opportunity_stage").appendChild(this.inOpportunityStage.getHtmlElement());;
     }
 
     // Initialize fields
@@ -1565,9 +1569,13 @@ com_irontec_zsugarH.prototype._newCaseDialog = function() {
         document.getElementById("zsugar_Case_subject").appendChild(this.inCaseSubject.getHtmlElement());
         this.inCaseDescription = new DwtInputField({parent: this.pNewCaseView, size: 30});
         document.getElementById("zsugar_Case_description").appendChild(this.inCaseDescription.getHtmlElement());
-        this.inCasResolution = new DwtHtmlEditor({parent: this.pNewCaseView});
-        this.inCasResolution.setSize(300, 70);
-        document.getElementById("zsugar_Case_resolution").appendChild(this.inCasResolution.getHtmlElement());
+        if (typeof DwtHtmlEditor === "function")
+            this.inCasResolution = new ZmHtmlEditor(this.pNewCaseView);
+        else
+            this.inCasResolution = new ZmHtmlEditor({parent: this.pNewCaseView});
+        this.inCasResolution.setMode("text/plain");
+		this.inCasResolution.setSize(300, 70);
+		document.getElementById("zsugar_Case_resolution").appendChild(this.inCasResolution.getHtmlElement());
     }
 
     // Initialize fields
@@ -1612,9 +1620,13 @@ com_irontec_zsugarH.prototype._newContactDialog = function() {
         document.getElementById("zsugar_contact_email").appendChild(this.inContactEmailBox.getHtmlElement());
         this.inContactAccBox = new DwtInputField({parent: this.pNewContactView, size: 30});
         document.getElementById("zsugar_contact_account").appendChild(this.inContactAccBox.getHtmlElement());
-        this.taContactDescription = new DwtHtmlEditor({parent: this.pNewContactView});
-        this.taContactDescription.setSize(300, 70);
-        document.getElementById("zsugar_contact_desc").appendChild(this.taContactDescription.getHtmlElement());
+        if (typeof DwtHtmlEditor === "function")
+            this.taContactDescription = new ZmHtmlEditor(this.pNewContactView);
+        else
+            this.taContactDescription = new ZmHtmlEditor({parent: this.pNewContactView});
+        this.taContactDescription.setMode("text/plain");
+		this.taContactDescription.setSize(300, 70);
+		document.getElementById("zsugar_contact_desc").appendChild(this.taContactDescription.getHtmlElement());
     }
 
     // Initialize fields
