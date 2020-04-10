@@ -1,3 +1,6 @@
+2020-04-10 zsugar 1.5.0
+    * redirect.jsp was rewritten to work in ZCS 8.8.15
+
 2016-08-23 zsugar 1.4.16
     * Tab between input fields on Lead Creation Dialog.
     * Also escape JSON characters in subject

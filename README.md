@@ -15,9 +15,12 @@ zSugar allows to add a mail and their attachments into:
 You can also create new Leads before exporting an email.
 
 ## Compatibility
-zSugar has been tested in ZCS 6.x, 7.x and 8.x  and SugarCRM v5.5.x and 
+zSugar has been tested in ZCS 8.8.15  and SugarCRM v5.5.x and 
 above (At least until 6.1.x). It may or may not work properly 
 with other versions.
+
+Older zsugar versions (1.4.x) worked with ZCS 6.x, 7.x, 8.6.x and 8.7.x.
+This new and improved zsugar version won't work with such old ZCS versions.
 
 ## Installing zSugar
  - Create a folder named com_irontec_zsugar
