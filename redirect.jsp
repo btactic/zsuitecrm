@@ -8,7 +8,6 @@
  */
 %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" import="java.net.*,java.io.*,java.util.*,java.text.*" %>
-<%@ page language="java" contentType="text/html; charset=UTF-8" import="java.util.logging.FileHandler,java.util.logging.Logger" %>
 
 <%/*@ page language="java" contentType="text/html; charset=UTF-8" import="org.apache.commons.httpclient.*,org.apache.commons.httpclient.methods.*, org.apache.commons.httpclient.util.*"*/ %>
 
@@ -131,8 +130,6 @@
 
       BufferedReader br = null;
 
-	Logger logger = Logger.getLogger("DEBUGZSUGAR");
-
       // Set the input data for POST method
       HttpPost pmethod = new HttpPost(sugar_url);
       Enumeration headerNames = request.getHeaderNames();
@@ -176,10 +173,7 @@
         }
 
       } catch (Exception e) {
-		//out.println(e);
-		StringWriter errors = new StringWriter();
-		e.printStackTrace(new PrintWriter(errors));
-		throw e;
+		out.println(e);
       } finally {
         pmethod.releaseConnection();
         if(br != null) try { br.close(); } catch (Exception fe) {}
