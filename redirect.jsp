@@ -8,9 +8,6 @@
  */
 %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" import="java.net.*,java.io.*,java.util.*,java.text.*" %>
-
-<%/*@ page language="java" contentType="text/html; charset=UTF-8" import="org.apache.commons.httpclient.*,org.apache.commons.httpclient.methods.*, org.apache.commons.httpclient.util.*"*/ %>
-
 <%@ page language="java" contentType="text/html; charset=UTF-8" import="org.apache.http.client.*,org.apache.http.impl.client.*,org.apache.http.client.utils.*,org.apache.http.client.methods.HttpGet,org.apache.http.client.config.*,org.apache.http.HttpResponse,org.apache.http.client.methods.HttpPost,org.apache.http.entity.mime.MultipartEntityBuilder,org.apache.http.HttpEntity,org.apache.http.HttpStatus,org.apache.http.NameValuePair,org.apache.http.message.BasicNameValuePair,org.apache.http.client.entity.UrlEncodedFormEntity,java.nio.charset.Charset" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" import="org.apache.commons.fileupload.*,org.apache.commons.fileupload.disk.*, org.apache.commons.io.*" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" import="biz.source_code.base64Coder.*" %>
