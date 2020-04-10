@@ -8,7 +8,11 @@
  */
 %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" import="java.net.*,java.io.*,java.util.*,java.text.*" %>
-<%@ page language="java" contentType="text/html; charset=UTF-8" import="org.apache.commons.httpclient.*,org.apache.commons.httpclient.methods.*, org.apache.commons.httpclient.util.*" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" import="java.util.logging.FileHandler,java.util.logging.Logger" %>
+
+<%/*@ page language="java" contentType="text/html; charset=UTF-8" import="org.apache.commons.httpclient.*,org.apache.commons.httpclient.methods.*, org.apache.commons.httpclient.util.*"*/ %>
+
+<%@ page language="java" contentType="text/html; charset=UTF-8" import="org.apache.http.client.*,org.apache.http.impl.client.*,org.apache.http.client.utils.*,org.apache.http.client.methods.HttpGet,org.apache.http.client.config.*,org.apache.http.HttpResponse,org.apache.http.client.methods.HttpPost,org.apache.http.entity.mime.MultipartEntityBuilder,org.apache.http.HttpEntity,org.apache.http.HttpStatus,org.apache.http.NameValuePair,org.apache.http.message.BasicNameValuePair,org.apache.http.client.entity.UrlEncodedFormEntity,java.nio.charset.Charset" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" import="org.apache.commons.fileupload.*,org.apache.commons.fileupload.disk.*, org.apache.commons.io.*" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" import="biz.source_code.base64Coder.*" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" import="javax.net.ssl.HttpsURLConnection, javax.net.ssl.SSLContext, javax.net.ssl.TrustManager, javax.net.ssl.X509TrustManager" %>
@@ -43,42 +47,58 @@
 		
 		// Get Post Cookies
 		javax.servlet.http.Cookie reqCookie[] = request.getCookies();
-		org.apache.commons.httpclient.Cookie[] clientCookie = new org.apache.commons.httpclient.Cookie[reqCookie.length];
+		org.apache.http.impl.client.BasicCookieStore cookieStore = new org.apache.http.impl.client.BasicCookieStore ();
+		org.apache.http.impl.cookie.BasicClientCookie[] clientCookie = new org.apache.http.impl.cookie.BasicClientCookie[reqCookie.length];
 		String hostName = request.getServerName () + ":" + request.getServerPort();
 	
 		for (int i=0; i<reqCookie.length; i++) {
 		        javax.servlet.http.Cookie cookie = reqCookie[i];
-		        clientCookie[i] = new org.apache.commons.httpclient.Cookie (hostName,cookie.getName(), cookie.getValue(),"/",null,false);
+		        clientCookie[i] = new org.apache.http.impl.cookie.BasicClientCookie (cookie.getName(), cookie.getValue());
+		        clientCookie[i].setDomain (hostName);
+		        clientCookie[i].setPath ("/");
+		        // TODO: Cookie never expires
+		        clientCookie[i].setSecure(false);
     		}
 
-		// Get Connection State
-		HttpState state = new HttpState();
-		state.addCookies (clientCookie);
-	
 		// Create a HTTP client with the actual state 
-		HttpClient srcClient = new HttpClient();
-		Enumeration headerNamesImg = request.getHeaderNames();
-      		while(headerNamesImg.hasMoreElements()) {
-	        	String headerNameImg = (String)headerNamesImg.nextElement();
-	        	srcClient.getParams().setParameter(headerNameImg, request.getHeader(headerNameImg));
-		}
-		srcClient.setState (state);
+		RequestConfig requestConfig = RequestConfig.custom()
+         .setConnectionRequestTimeout(10000)
+         .setConnectTimeout(10000)
+         .setSocketTimeout(10000)
+         .build();
+		HttpClientBuilder tmpHttpClientBuilder = HttpClientBuilder.create();
+		tmpHttpClientBuilder.setDefaultCookieStore(cookieStore);
+		tmpHttpClientBuilder.setDefaultRequestConfig(requestConfig);
+		HttpClient srcClient = tmpHttpClientBuilder.build();
 
 		// Convert the URL
 		int paramsbeg = attUrl.indexOf("id=")-1;
 		String filename = attUrl.substring(0, paramsbeg);
 		String getparam = attUrl.substring(paramsbeg, attUrl.length());
-		attUrl = URIUtil.encodePath(filename, "ISO-8859-1") + getparam;
+		//attUrl = URIUtil.encodePath(filename, "ISO-8859-1") + getparam;
+		if (filename.length() == 0) {
+			attUrl = "";
+		} else {
+			attUrl = new URIBuilder().setPath(filename).toString();
+		}
+		attUrl = attUrl + getparam;
 		//out.println(attUrl);
 
 		// Download the Image
-		GetMethod get = new GetMethod (attUrl);
-		get.setFollowRedirects (true);
-		srcClient.getHttpConnectionManager().getParams().setConnectionTimeout (10000);
-		srcClient.executeMethod(get);
+		HttpGet get = new HttpGet (attUrl);
+		Enumeration headerNamesImg = request.getHeaderNames();
+			while(headerNamesImg.hasMoreElements()) {
+				String headerNameImg = (String)headerNamesImg.nextElement();
+				get.setHeader(headerNameImg, request.getHeader(headerNameImg));
+		}
+		// get.setFollowRedirects (true); // By default it should follow redirect. No need to implement in 4.x version
+		HttpResponse httpResponse = srcClient.execute(get);
+		// TODO: Improve status handling
+		// int statusCode = httpResponse.getStatusLine().getStatusCode();
+		// if (statusCode == HttpStatus.SC_OK) {
 
 		// Copy the image to a local temporaly file
-		ByteUtil.copy(get.getResponseBodyAsStream(), false, readFileStream, false);
+		ByteUtil.copy(httpResponse.getEntity().getContent(), false, readFileStream, false);
 		readFileStream.close();
 
 		// Read the temporary file and output its Base64-values
@@ -106,45 +126,60 @@
 
 
       // Create a HTTP client to foward REST petition
-      HttpClient client = new HttpClient();
-      Enumeration headerNames = request.getHeaderNames();
-      while(headerNames.hasMoreElements()) {
-      	String headerName = (String)headerNames.nextElement();
-	client.getParams().setParameter(headerName, request.getHeader(headerName));
-	//out.println(headerName+":"+request.getHeader(headerName));
-      }
+	  HttpClientBuilder tmpHttpClientBuilder2 = HttpClientBuilder.create();
+	  HttpClient client = tmpHttpClientBuilder2.build();
 
       BufferedReader br = null;
 
+	Logger logger = Logger.getLogger("DEBUGZSUGAR");
+
       // Set the input data for POST method
-      PostMethod pmethod = new PostMethod(sugar_url);
+      HttpPost pmethod = new HttpPost(sugar_url);
+      Enumeration headerNames = request.getHeaderNames();
+      while(headerNames.hasMoreElements()) {
+		String headerName = (String)headerNames.nextElement();
+		// Do not set Content-Length header again
+		// Do not overwrite host with original Zimbra host
+		if ( ( headerName == "Content-Length" ) || ( headerName == "Host" ) ) {
+		// DO NOTHING
+		} else {
+				pmethod.setHeader(headerName, request.getHeader(headerName));
+		}
+      }
 
-      org.apache.commons.httpclient.methods.multipart.Part[] parts = {
-		new org.apache.commons.httpclient.methods.multipart.StringPart("input_type",input_type, encoding),
-		new org.apache.commons.httpclient.methods.multipart.StringPart("method", method, encoding),
-		new org.apache.commons.httpclient.methods.multipart.StringPart("response_type", response_type, encoding),
-		new org.apache.commons.httpclient.methods.multipart.StringPart("rest_data", rest_data, encoding)};
-
+    List<NameValuePair> params = new ArrayList<NameValuePair>();
+    params.add(new BasicNameValuePair("input_type", input_type));
+    params.add(new BasicNameValuePair("method", method));
+    params.add(new BasicNameValuePair("response_type", response_type));
+    params.add(new BasicNameValuePair("rest_data", rest_data));
+    pmethod.setEntity(new UrlEncodedFormEntity(params,encoding));
 
       try{
-	pmethod.setRequestEntity(new org.apache.commons.httpclient.methods.multipart.MultipartRequestEntity(parts, pmethod.getParams()));
-        int returnCode = client.executeMethod(pmethod);
+        HttpResponse httpResponse2 = client.execute(pmethod);
+		int returnCode = httpResponse2.getStatusLine().getStatusCode();
 
         if(returnCode == HttpStatus.SC_NOT_IMPLEMENTED) {
                 out.println("The Post method is not implemented by this URI");
                 // still consume the response body
-                pmethod.getResponseBodyAsString();
-        } else {
-                br = new BufferedReader(new InputStreamReader(pmethod.getResponseBodyAsStream()));
+                br = new BufferedReader(new InputStreamReader(httpResponse2.getEntity().getContent()));
                 String readLine;
-		// Write the respone body
                 while(((readLine = br.readLine()) != null)) {
-		       out.println(readLine); 
+                    // DO NOTHING
+                }
+        } else {
+                br = new BufferedReader(new InputStreamReader(httpResponse2.getEntity().getContent()));
+                String readLine;
+                // Write the response body
+                while(((readLine = br.readLine()) != null)) {
+                    out.println(readLine); 
                 }
         }
 
       } catch (Exception e) {
-		out.println(e);
+		//out.println(e);
+		StringWriter errors = new StringWriter();
+		e.printStackTrace(new PrintWriter(errors));
+		throw e;
       } finally {
         pmethod.releaseConnection();
         if(br != null) try { br.close(); } catch (Exception fe) {}
