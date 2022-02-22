@@ -33,6 +33,8 @@ zmzimletctl deploy com_irontec_zsugar.zip
 zmmailboxdctl restart
 ```
 
+At last, activate/desactivate the zimlet for the COS (by default the zimlet is active on the "default" COS and inactive on the other COS).
+
 ## Configuring zSuitecrm
  There is no global configuration for zSuitecrm, each user must
  configure it separately.
