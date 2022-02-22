@@ -41,9 +41,9 @@ zmmailboxdctl restart
  a new icon should apperar in the left panel. Just click it and
  a configuration window should appear with the following fields:
 
-- Username: SugarCRM username
-- Password: SugarCRM password
-- SugarCRM URL: SugarCRM URL direction. It should use a secure
+- Username: SuiteCRM username
+- Password: SuiteCRM password
+- SuiteCRM URL: SuiteCRM URL direction. It should use a secure
 	       connection, so be sure that 'https' is being used.
 - LDAP Authentication: Enable this to send clean password otherwise
 	       MD5 encryption will be used.
@@ -59,7 +59,7 @@ zmmailboxdctl restart
 	be tagged.
 
  After configuring zSugar, you can validate your connection to
- SugarCRM by right-clicking the zSugar icon and choosing Force
+ SuiteCRM by right-clicking the zSugar icon and choosing Force
  Authentication.
 
 ## Using zSugar
@@ -69,17 +69,17 @@ zmmailboxdctl restart
    Just Drag a conversation or email and drop in the zSugar icon.
 
  - Using Toolbar Button:
-   Select a conversation or email and click 'Send to SugarCRM'
+   Select a conversation or email and click 'Send to SuiteCRM'
    toolbar button.
 
  - Using the context menu option:
-   Rigth click a conversation or email and click 'Send to SugarCRM'
+   Rigth click a conversation or email and click 'Send to SuiteCRM'
    option.
 
  After this, a new screen will appear with following sections:
 
  - Result Section:
-    This section shows SugarCRM response results. By default,
+    This section shows SuiteCRM response results. By default,
     zSugar will search the FROM: contact of the email. It will show
     Accounts, Opportunities and Projects as configured (see Configuring zSugar)
 
@@ -89,7 +89,7 @@ zmmailboxdctl restart
 
  - Attachments list
     If email has any attachment, a list will appear. Checked attachments
-    will be also imported into SugarCRM
+    will be also imported into SuiteCRM
 
 ## Authors
 
