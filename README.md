@@ -2,7 +2,7 @@
 
 zSugar is a zimlet for Zimbra Collaboration Suite.
 
-This project aims for integration of received mails between Zimbra and SugarCRM.
+This project aims for integration of received mails between Zimbra and SuiteCRM.
 
 zSugar allows to add a mail and their attachments into:
  - Accounts
@@ -15,9 +15,7 @@ zSugar allows to add a mail and their attachments into:
 You can also create new Leads before exporting an email.
 
 ## Compatibility
-zSugar has been tested in ZCS 8.8.15  and SugarCRM v5.5.x and 
-above (At least until 6.1.x). It may or may not work properly 
-with other versions.
+zSugar has been tested in ZCS 8.8.15  and SuiteCRM v7.X.X. It may or may not work properly with other versions.
 
 Older zsugar versions (1.4.x) worked with ZCS 6.x, 7.x, 8.6.x and 8.7.x.
 This new and improved zsugar version won't work with such old ZCS versions.
