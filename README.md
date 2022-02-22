@@ -20,12 +20,24 @@ zSuitecrm has been tested in ZCS 8.8.15  and SuiteCRM v7.X.X. It may or may not 
 Older zsugar versions (1.4.x) worked with ZCS 6.x, 7.x, 8.6.x and 8.7.x.
 This new and improved zsugar version won't work with such old ZCS versions.
 
-## Installing zSuitecrm
- - Create a folder named com_irontec_zsugar
- - Download zSuitecrm source and uncompress into previously created folder
- - Zip the folder com_irontec_zsugar and deploy using Zimbra Administration interface
+## Getting zSuitecrm
 
-You can also deploy the zimlet from the server shell
+You can fetch an already built zip file from our [zSuitecrm releases](https://github.com/btactic/zsugar/releases).
+
+Or you can install git, zip and sed in order to build the zimlet yourself:
+
+```
+# apt-get -y install git zip sed
+# git clone https://github.com/btactic/zsugar.git
+# cd zsugar
+# chmod +rx build.sh
+# ./build.sh
+```
+
+
+## Installing zSuitecrm
+
+Deploy the zimlet from the server shell
 
 ```
 sudo su - zimbra
