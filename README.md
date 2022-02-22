@@ -1,4 +1,4 @@
-# zsugar
+# zSuitecrm
 
 zSuitecrm is a zimlet for Zimbra Collaboration Suite.
 
