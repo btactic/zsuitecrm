@@ -1,10 +1,10 @@
 # zsugar
 
-zSugar is a zimlet for Zimbra Collaboration Suite.
+zSuitecrm is a zimlet for Zimbra Collaboration Suite.
 
 This project aims for integration of received mails between Zimbra and SuiteCRM.
 
-zSugar allows to add a mail and their attachments into:
+zSuitecrm allows to add a mail and their attachments into:
  - Accounts
  - Contacts
  - Opportunities
@@ -15,14 +15,14 @@ zSugar allows to add a mail and their attachments into:
 You can also create new Leads before exporting an email.
 
 ## Compatibility
-zSugar has been tested in ZCS 8.8.15  and SuiteCRM v7.X.X. It may or may not work properly with other versions.
+zSuitecrm has been tested in ZCS 8.8.15  and SuiteCRM v7.X.X. It may or may not work properly with other versions.
 
 Older zsugar versions (1.4.x) worked with ZCS 6.x, 7.x, 8.6.x and 8.7.x.
 This new and improved zsugar version won't work with such old ZCS versions.
 
-## Installing zSugar
+## Installing zSuitecrm
  - Create a folder named com_irontec_zsugar
- - Download zSugar source and uncompress into previously created folder
+ - Download zSuitecrm source and uncompress into previously created folder
  - Zip the folder com_irontec_zsugar and deploy using Zimbra Administration interface
 
 You can also deploy the zimlet from the server shell
@@ -33,11 +33,11 @@ zmzimletctl deploy com_irontec_zsugar.zip
 zmmailboxdctl restart
 ```
 
-## Configuring zSugar
- There is no global configuration for zSugar, each user must
+## Configuring zSuitecrm
+ There is no global configuration for zSuitecrm, each user must
  configure it separately.
 
- If zSugar has been correctly deployed, after loggin in zimbra,
+ If zSuitecrm has been correctly deployed, after loggin in zimbra,
  a new icon should apperar in the left panel. Just click it and
  a configuration window should appear with the following fields:
 
@@ -58,15 +58,15 @@ zmmailboxdctl restart
 	it is "activated", so previously exported emails won't
 	be tagged.
 
- After configuring zSugar, you can validate your connection to
- SuiteCRM by right-clicking the zSugar icon and choosing Force
+ After configuring zSuitecrm, you can validate your connection to
+ SuiteCRM by right-clicking the zSuitecrm icon and choosing Force
  Authentication.
 
-## Using zSugar
- There are three ways to access zSugar screen:
+## Using zSuitecrm
+ There are three ways to access zSuitecrm screen:
 
  - Using the Zimlet panel:
-   Just Drag a conversation or email and drop in the zSugar icon.
+   Just Drag a conversation or email and drop in the zSuitecrm icon.
 
  - Using Toolbar Button:
    Select a conversation or email and click 'Send to SuiteCRM'
@@ -80,8 +80,8 @@ zmmailboxdctl restart
 
  - Result Section:
     This section shows SuiteCRM response results. By default,
-    zSugar will search the FROM: contact of the email. It will show
-    Accounts, Opportunities and Projects as configured (see Configuring zSugar)
+    zSuitecrm will search the FROM: contact of the email. It will show
+    Accounts, Opportunities and Projects as configured (see Configuring zSuitecrm)
 
  - Contacts Dropbox
     We can request CRM information of other contact in the selected

@@ -15,7 +15,7 @@
 /***
  * com_irontec_zsugarH
  * 
- * This object works as handler for the zSugar Zimlet
+ * This object works as handler for the zSuitecrm Zimlet
  * Interaction with zimlet is divided into:
  *  - A Panel Icon where Messages or Conversations can be droped. It also
  *    has a context menu when right clicked, and options panel when single/double clicked.
@@ -86,7 +86,7 @@ com_irontec_zsugarH.prototype.menuItemSelected = function(itemId) {
  * 
  * This function works as hook for adding or editing main toolbar icons
  * 
- * It adds the zSugar button at the end of the bar, just after the 
+ * It adds the zSuitecrm button at the end of the bar, just after the 
  * View Icon. When this button is clicked, it will callback private
  * _addSugarMsg function.
  * 
@@ -149,7 +149,7 @@ com_irontec_zsugarH.prototype.initializeToolbar =
  * 
  * Init the Zimlet.
  * 
- * It adds the zSugar button at the end of context menu, just after the 
+ * It adds the zSuitecrm button at the end of context menu, just after the 
  * View Icon. When this button is clicked, it will callback private
  * _addSugarMsg function. 
  */
@@ -826,7 +826,7 @@ com_irontec_zsugarH.prototype._fetchLeadsData = function(data){
 
         /**
          * Support for Leads as RootRelation
-         * From zSugar 1.4.1 we treat Leads as a Contact too
+         * From zSuitecrm 1.4.1 we treat Leads as a Contact too
          **/
 	if ( this.iscrm.getLeadsFromMail(this.emailAddr,this._fetchRelationships) === false) {
 		appCtxt.getAppController().setStatusMsg(this.getMessage("zsugar_noOptsSelected"));

@@ -20,7 +20,7 @@
 	<resource>resources/irontec.png</resource>
 	<resource>resources/Poweredby.png</resource>
 
-	<zimletPanelItem label="zSugar" icon="ISUGAR-panelIcon">
+	<zimletPanelItem label="zSuitecrm" icon="ISUGAR-panelIcon">
 		<toolTipText>${msg.zsugar_tooltip}</toolTipText>
 		<dragSource type="ZmConv" />
 	  	<dragSource type="ZmMailMsg" />

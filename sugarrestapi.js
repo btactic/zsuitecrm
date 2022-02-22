@@ -15,7 +15,7 @@
 /***
  * ironsugar
  * 
- * This object works as wrapper for the zSugar Zimlet JSON petitions to Sugar
+ * This object works as wrapper for the zSuitecrm Zimlet JSON petitions to Sugar
  *  
  * This zimlets invokes some SugarCRM methods for Importing/Exporting data. The object
  * responsible for that task is ironsugar (@see sugarestapi.js). Originally, this method
@@ -26,7 +26,7 @@
  * @param url 	@Deprecated
  * @param u		Username
  * @param p		Password
- * @param obj	zSugar Zimlet object
+ * @param obj	zSuitecrm Zimlet object
  *  
  */
 function ironsugar(url,u,p,obj) {
@@ -46,7 +46,7 @@ function ironsugar(url,u,p,obj) {
  *
  * This function sends JSON petitions to a local JSP (redirect.jsp)
  * which actually sends the final messages to SugarCRM
- * This JSP acts as a proxy for all petitions from zSugar. The reason
+ * This JSP acts as a proxy for all petitions from zSuitecrm. The reason
  * for this is that, in some cases we want some task done in server
  * side (that's the JSP) and other in the client side (that's this
  * JavaScript code) 
@@ -365,7 +365,7 @@ ironsugar.prototype.LinkEmail = function(idMail,arMod,callback) {
  * set_note_attachment method. Attachments are always linked
  * to an email.
  * 
- * Since version 1.4.0 of zSugar, this function will create a Note
+ * Since version 1.4.0 of zSuitecrm, this function will create a Note
  * before attaching the file. This is required for sugarCRM versions
  * 6.4.X and above
  *
@@ -406,7 +406,7 @@ ironsugar.prototype.postNote = function (msgId, fname, url, callback, response){
  * ironsugar.prototype.addAttachment
  *
  * This function will the create attachment in sugarCRM.
- * This is the replace for setAttachment since zSugar 1.4.0
+ * This is the replace for setAttachment since zSuitecrm 1.4.0
  *
  *
  * @param msgId         SugarCRM Email ID
