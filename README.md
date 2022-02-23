@@ -107,11 +107,9 @@ At last, activate/desactivate the zimlet for the COS (by default the zimlet is a
 
 ## Authors
 
- This zimlet has been developed by Irontec S.L.
-    http://www.irontec.com
-
- Base64 Library has been developed by Christian d'Heureuse.
-    http://www.source-code.biz/base64coder/java/
+- This zimlet is being developed by BTACTIC, S.C.C.L. ( [http://www.btactic.com](http://www.btactic.com) )
+- This zimlet had originally been developed by Irontec S.L. ( [http://www.irontec.com](http://www.irontec.com) )
+- Base64 Library has been developed by Christian d'Heureuse. ( [http://www.source-code.biz/base64coder/java/](http://www.source-code.biz/base64coder/java/) )
 
 ## License
 
