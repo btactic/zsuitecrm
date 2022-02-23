@@ -72,7 +72,6 @@
 		int paramsbeg = attUrl.indexOf("id=")-1;
 		String filename = attUrl.substring(0, paramsbeg);
 		String getparam = attUrl.substring(paramsbeg, attUrl.length());
-		//attUrl = URIUtil.encodePath(filename, "ISO-8859-1") + getparam;
 		if (filename.length() == 0) {
 			attUrl = "";
 		} else {
@@ -88,7 +87,6 @@
 				String headerNameImg = (String)headerNamesImg.nextElement();
 				get.setHeader(headerNameImg, request.getHeader(headerNameImg));
 		}
-		// get.setFollowRedirects (true); // By default it should follow redirect. No need to implement in 4.x version
 		HttpResponse httpResponse = srcClient.execute(get);
 		// TODO: Improve status handling
 		// int statusCode = httpResponse.getStatusLine().getStatusCode();
