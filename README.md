@@ -37,6 +37,12 @@ Or you can install git, zip and sed in order to build the zimlet yourself:
 
 ## Installing zSuitecrm
 
+Enable JSP support for zimlets.
+
+```
+zmprov mcf zimbraZimletJspEnabled TRUE
+```
+
 Deploy the zimlet from the server shell
 
 ```
