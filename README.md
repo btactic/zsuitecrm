@@ -55,18 +55,18 @@ At last, activate/desactivate the zimlet for the COS (by default the zimlet is a
  a new icon should apperar in the left panel. Just click it and
  a configuration window should appear with the following fields:
 
-- Username: SuiteCRM username
-- Password: SuiteCRM password
-- SuiteCRM URL: SuiteCRM URL direction. It should use a secure
+- **Username**: SuiteCRM username
+- **Password**: SuiteCRM password
+- **SuiteCRM URL**: SuiteCRM URL direction. It should use a secure
 	       connection, so be sure that 'https' is being used.
-- LDAP Authentication: Enable this to send clean password otherwise
+- **LDAP Authentication**: Enable this to send clean password otherwise
 	       MD5 encryption will be used.
-- Accounts: Enable this to retrieve account informations.
-- Opportunities: Enable this to retrieve Opportunitie information.
-- Projects: Enable this to retrieve Project information.
-- Leads: Enable this to retrieve Leads information.
+- **Accounts**: Enable this to retrieve account informations.
+- **Opportunities**: Enable this to retrieve Opportunitie information.
+- **Projects**: Enable this to retrieve Project information.
+- **Leads**: Enable this to retrieve Leads information.
 
-- Mark exported with tag: Set the tag name that will be used
+- **Mark exported with tag**: Set the tag name that will be used
 	to tag exported emails. If this field is empty, emails
 	won't be tagged. This feature only works from the moment
 	it is "activated", so previously exported emails won't
