@@ -54,6 +54,7 @@
 		        clientCookie[i].setPath ("/");
 		        // TODO: Cookie never expires
 		        clientCookie[i].setSecure(false);
+		        cookieStore.addCookie(clientCookie[i]);
     		}
 
 		// Create a HTTP client with the actual state 
