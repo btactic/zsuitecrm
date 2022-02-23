@@ -95,7 +95,7 @@ At last, activate/desactivate the zimlet for the COS (by default the zimlet is a
  - Result Section:
     This section shows SuiteCRM response results. By default,
     zSuitecrm will search the FROM: contact of the email. It will show
-    Accounts, Opportunities and Projects as configured (see Configuring zSuitecrm).
+    Accounts, Opportunities and Projects as configured (see [Configuring zSuitecrm](#Configuring-zSuitecrm)).
 
  - Contacts Dropbox:
     We can request CRM information of other contact in the selected
