@@ -92,7 +92,7 @@
 		// int statusCode = httpResponse.getStatusLine().getStatusCode();
 		// if (statusCode == HttpStatus.SC_OK) {
 
-		// Copy the image to a local temporaly file
+		// Copy the image to a local temporary file
 		ByteUtil.copy(httpResponse.getEntity().getContent(), false, readFileStream, false);
 		readFileStream.close();
 
