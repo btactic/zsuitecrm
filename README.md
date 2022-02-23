@@ -87,7 +87,7 @@ At last, activate/desactivate the zimlet for the COS (by default the zimlet is a
    toolbar button.
 
  - Using the context menu option:
-   Rigth click a conversation or email and click 'Send to SuiteCRM'
+   Right click a conversation or email and click 'Send to SuiteCRM'
    option.
 
  After this, a new screen will appear with following sections:
@@ -95,15 +95,15 @@ At last, activate/desactivate the zimlet for the COS (by default the zimlet is a
  - Result Section:
     This section shows SuiteCRM response results. By default,
     zSuitecrm will search the FROM: contact of the email. It will show
-    Accounts, Opportunities and Projects as configured (see Configuring zSuitecrm)
+    Accounts, Opportunities and Projects as configured (see Configuring zSuitecrm).
 
- - Contacts Dropbox
+ - Contacts Dropbox:
     We can request CRM information of other contact in the selected
-    email
+    email.
 
- - Attachments list
+ - Attachments list:
     If email has any attachment, a list will appear. Checked attachments
-    will be also imported into SuiteCRM
+    will be also imported into SuiteCRM.
 
 ## Authors
 
