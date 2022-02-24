@@ -72,12 +72,10 @@
 		int paramsbeg = attUrl.indexOf("id=")-1;
 		String filename = attUrl.substring(0, paramsbeg);
 		String getparam = attUrl.substring(paramsbeg, attUrl.length());
-		if (filename.length() == 0) {
-			attUrl = "";
-		} else {
-			attUrl = new URIBuilder().setPath(filename).toString();
-		}
-		attUrl = attUrl + getparam;
+		String decodedURL = URLDecoder.decode(filename, "UTF-8");
+		URL url = new URL(decodedURL);
+		URI uri = new URI(url.getProtocol(), url.getUserInfo(), url.getHost(), url.getPort(), url.getPath(), url.getQuery(), url.getRef());
+		attUrl = uri.toURL().toString() + getparam;
 		//out.println(attUrl);
 
 		// Download the Image
