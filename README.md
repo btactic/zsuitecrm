@@ -48,6 +48,7 @@ Deploy the zimlet from the server shell
 ```
 sudo su - zimbra
 zmzimletctl deploy com_irontec_zsugar.zip
+zmzimletctl configure /opt/zimbra/zimlets-deployed/com_irontec_zsugar/config_template.xml
 zmmailboxdctl restart
 ```
 

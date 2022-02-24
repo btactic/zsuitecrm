@@ -1,4 +1,4 @@
-<zimletConfig name="com_zimbra_ironsugar" version="1.0">
+<zimletConfig name="com_irontec_zsugar" version="1.0">
     <global>
         <property name="allowedDomains">*</property>
     </global>
