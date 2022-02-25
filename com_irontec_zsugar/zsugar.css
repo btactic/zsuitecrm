@@ -74,15 +74,15 @@
 }
 
 #zsugar_logo {
-	background: url("resources/logoej.gif") no-repeat 10px center;
-	padding-left:60px;
+	background: url("resources/btactic_logo.png") no-repeat 10px center;
+	padding-left:115px;
 	padding-right:15px;
 	height:40px;
 }
 
 #zsuguar_ilogo {
 	background: url("resources/irontec.png") no-repeat 10px  center;
-	padding-left:60px;
+	padding-left:115px;
 	padding-right:15px;
 	height:40px;
 }
