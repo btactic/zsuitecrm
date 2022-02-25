@@ -1,6 +1,7 @@
 #!/bin/bash
 VERSION="$(head -n 1 VERSION)"
 ABOUT_STANZA="$(head -n 1 ABOUT_STANZA)"
+POWERED_LINK="$(head -n 1 POWERED_LINK)"
 ZIMLET_NAME="com_irontec_zsugar"
 ZIMLET_BUILD_DIR="${ZIMLET_NAME}_tmpbuilddir"
 
@@ -19,6 +20,7 @@ FILES_TO_REPLACE="com_irontec_zsugar.xml com_irontec_zsugar.properties com_iront
 
 for nfile in ${FILES_TO_REPLACE} ; do
   sed -i 's~@@ABOUT_STANZA@@~'"${ABOUT_STANZA}"'~g' "${nfile}"
+  sed -i 's~@@POWERED_LINK@@~'"${POWERED_LINK}"'~g' "${nfile}"
   sed -i 's~@@VERSION@@~'"${VERSION}"'~g' "${nfile}"
 done
 
