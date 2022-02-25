@@ -81,9 +81,13 @@
 		// Download the Image
 		HttpGet get = new HttpGet (attUrl);
 		Enumeration headerNamesImg = request.getHeaderNames();
-			while(headerNamesImg.hasMoreElements()) {
-				String headerNameImg = (String)headerNamesImg.nextElement();
+        while(headerNamesImg.hasMoreElements()) {
+			String headerNameImg = (String)headerNamesImg.nextElement();
+			if ( headerNameImg == "Content-Length" ) {
+				// DO NOTHING
+			} else {
 				get.setHeader(headerNameImg, request.getHeader(headerNameImg));
+			}
 		}
 		HttpResponse httpResponse = srcClient.execute(get);
 		// TODO: Improve status handling
