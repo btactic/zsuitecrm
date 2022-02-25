@@ -24,26 +24,31 @@ This new and improved zSuitecrm version won't work with such old ZCS versions.
 
 You can fetch an already built zip file from our [zSuitecrm releases](https://github.com/btactic/zsuitecrm/releases).
 
-Or you can install git, zip and sed in order to build the zimlet yourself:
+Or you can install (as root) git, zip and sed packages in order to build the zimlet yourself:
 
 ```
-# apt-get -y install git zip sed
-# git clone https://github.com/btactic/zsuitecrm.git
-# cd zsuitecrm
-# chmod +rx build.sh
-# ./build.sh
+apt-get -y install git zip sed
 ```
 
+As a normal user you can clone the current repo and build the zimlet.
+
+```
+git clone https://github.com/btactic/zsuitecrm.git
+cd zsuitecrm
+chmod +rx build.sh
+./build.sh
+```
 
 ## Installing zSuitecrm
 
 Enable JSP support for zimlets.
 
 ```
+sudo su - zimbra
 zmprov mcf zimbraZimletJspEnabled TRUE
 ```
 
-Deploy the zimlet from the server shell
+Deploy the zimlet from the server shell.
 
 ```
 sudo su - zimbra
