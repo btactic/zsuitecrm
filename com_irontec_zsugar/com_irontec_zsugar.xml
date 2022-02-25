@@ -9,7 +9,7 @@
 
 	<handlerObject>com_irontec_zsugarH</handlerObject>
 	
-	<resource>resources/ironsugar.png</resource>
+	<resource>resources/zsuitecrm_logo.png</resource>
 	<resource>resources/Contacts.png</resource>
 	<resource>resources/Accounts.png</resource>
 	<resource>resources/Opportunities.png</resource>
