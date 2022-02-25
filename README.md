@@ -4,6 +4,8 @@ zSuitecrm is a zimlet for Zimbra Collaboration Suite.
 
 This project aims for integration of received mails between Zimbra and SuiteCRM.
 
+![zSuitecrm - Title](images/zsuitecrm_title.png)
+
 zSuitecrm allows to add a mail and their attachments into:
  - Accounts
  - Contacts
@@ -60,6 +62,9 @@ zmmailboxdctl restart
 At last, activate/desactivate the zimlet for the COS (by default the zimlet is active on the "default" COS and inactive on the other COS).
 
 ## Configuring zSuitecrm
+
+![zSuitecrm Configuration Example](images/zsuitecrm_preferences.png)
+
  There is no global configuration for zSuitecrm, each user must
  configure it separately.
 
@@ -92,15 +97,19 @@ At last, activate/desactivate the zimlet for the COS (by default the zimlet is a
  There are three ways to access zSuitecrm screen:
 
  - Using the Zimlet panel:
-   Just Drag a conversation or email and drop in the zSuitecrm icon.
+   Just Drag a conversation or email and drop in the zSuitecrm icon. (*Please note that as 2022 this is not working.*)
 
  - Using Toolbar Button:
    Select a conversation or email and click 'Send to SuiteCRM'
    toolbar button.
 
+![zSuitecrm Toolbar button](images/zsuitecrm_send_to_suitecrm_button.png)
+
  - Using the context menu option:
    Right click a conversation or email and click 'Send to SuiteCRM'
    option.
+
+![zSuitecrm - Right click on a message.](images/zsuitecrm_right_click_message.png)
 
  After this, a new screen will appear with following sections:
 
@@ -117,11 +126,17 @@ At last, activate/desactivate the zimlet for the COS (by default the zimlet is a
     If email has any attachment, a list will appear. Checked attachments
     will be also imported into SuiteCRM.
 
+![zSuitecrm - Send to SuiteCRM dialog](images/zsuitecrm_send_to_suitecrm_dialog.png)
+
+![zSuitecrm - Create new lead](images/zsuitecrm_create_new_lead.png)
+
 ## Authors
 
 - This zimlet is being developed by BTACTIC, S.C.C.L. ( [http://www.btactic.com](http://www.btactic.com) )
 - This zimlet had originally been developed by Irontec S.L. ( [http://www.irontec.com](http://www.irontec.com) )
 - Base64 Library has been developed by Christian d'Heureuse. ( [http://www.source-code.biz/base64coder/java/](http://www.source-code.biz/base64coder/java/) )
+
+![zSuitecrm - Right click on zimlet](images/zsuitecrm_right_click_zimlet.png)
 
 ## License
 
